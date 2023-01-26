@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="AddressArrays">
+        <item>London</item>
+        <item>Brighton</item>
+        <item>Edinburgh</item>
+        <item>Cardiff</item>
+        <item>Belfast</item>
+        <item>Birmingham</item>
+        <item>Liverpool</item>
+        <item>Oxford</item>
+        <item>Cambridge</item>
+        <item>Glasgow</item>
+        <item>Sheffield</item>
+        <item>Manchester</item>
+        <item>Plymouth</item>
+    </string-array>
+</resources>

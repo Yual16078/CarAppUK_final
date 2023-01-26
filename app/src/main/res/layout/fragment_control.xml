@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#aba2a4"
+    tools:context=".fragment.ControlFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Control Centre"
+            android:textSize="30sp" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="0dp">
+
+
+            <LinearLayout
+                android:padding="20dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <LinearLayout
+                    android:background="@drawable/control_fragment_card"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:text="Drive Model"
+                        android:textSize="50sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <ImageButton
+                        android:id="@+id/bt_drive_model"
+                        android:background="@mipmap/model_comfort"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"/>
+
+                    <TextView
+                        android:id="@+id/tx_drive_model"
+                        android:text="Comfort"
+                        android:textSize="40dp"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <com.example.carappuk.ViewModel.DragListenerGridView
+                android:columnCount="3"
+                android:rowCount="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3">
+
+
+                <LinearLayout
+                    android:padding="18dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <FrameLayout
+                        android:id="@+id/tpms"
+                        android:background="@drawable/control_fragment_card"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/ly_tpms"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageButton
+                                android:layout_gravity="center"
+                                android:background="@mipmap/control_tpms"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_marginTop="15dp"
+                                android:text="TPMS"
+                                android:textSize="20sp"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:padding="18dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <FrameLayout
+                        android:id="@+id/ventilation"
+                        android:background="@drawable/control_fragment_card"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/ly_ventilation"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageButton
+                                android:layout_gravity="center"
+                                android:background="@mipmap/ventilation"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:text="Ventilation"
+                                android:textSize="20sp"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <FrameLayout
+                        android:background="@drawable/control_fragment_card"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageButton
+                                android:layout_gravity="center"
+                                android:background="@mipmap/brightness"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"/>
+                            <SeekBar
+                                android:id="@+id/seek_bar_brightness"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:max="255"
+                                android:maxHeight="10dip"
+                                android:minHeight="10dip"
+                                android:progressDrawable="@xml/seekbar_temperature"
+                                android:splitTrack="false"
+                                android:thumb="@mipmap/ic_seekbar" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:padding="18dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <FrameLayout
+                        android:id="@+id/fuel_cap"
+                        android:background="@drawable/control_fragment_card"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/ly_fuel_cap"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageButton
+                                android:layout_gravity="center"
+                                android:background="@mipmap/fuel_cap"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:text="Fuel Cap"
+                                android:textSize="20sp"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:padding="18dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <FrameLayout
+                        android:id="@+id/child_safety_lock"
+                        android:background="@drawable/control_fragment_card"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/ly_child_safety_lock"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageButton
+                                android:layout_gravity="center"
+                                android:background="@mipmap/child_safety_lock"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:text="Child Safety Lock"
+                                android:textSize="20sp"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <FrameLayout
+                        android:background="@drawable/control_fragment_card"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageButton
+                                android:layout_gravity="center"
+                                android:background="@mipmap/control_volume"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"/>
+                            <SeekBar
+                                android:id="@+id/seek_bar_volume"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:maxHeight="10dip"
+                                android:minHeight="10dip"
+                                android:progressDrawable="@xml/seekbar_temperature"
+                                android:splitTrack="false"
+                                android:thumb="@mipmap/ic_seekbar" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+
+            </com.example.carappuk.ViewModel.DragListenerGridView>
+
+        </LinearLayout>
+
+        <com.example.carappuk.ViewModel.DragListenerGridView
+            android:layout_width="match_parent"
+            android:columnCount="5"
+            android:rowCount="1"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:padding="18dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <FrameLayout
+                    android:id="@+id/trunk"
+                    android:background="@drawable/control_fragment_card"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/ly_trunk"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_gravity="center"
+                            android:background="@mipmap/control_trunk"
+                            android:layout_width="80dp"
+                            android:layout_height="60dp"/>
+                        <TextView
+                            android:layout_gravity="center"
+                            android:text="Trunk"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="18dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <FrameLayout
+                    android:id="@+id/unlock_lock"
+                    android:background="@drawable/control_fragment_card"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/ly_unlock_lock"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/bt_lock_unlock"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/control_unlock"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"/>
+                        <TextView
+                            android:id="@+id/tx_lock_unlock"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:text="Unlock"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="18dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <FrameLayout
+                    android:id="@+id/lock_airbag"
+                    android:background="@drawable/control_fragment_card"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/ly_lock_airbag"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_gravity="center"
+                            android:background="@mipmap/lock_airbag"
+                            android:layout_width="70dp"
+                            android:layout_height="60dp"/>
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:text="Lock Airbag"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="18dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <FrameLayout
+                    android:id="@+id/interior_lights"
+                    android:background="@drawable/control_fragment_card"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/ly_interior_lights"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_gravity="center"
+                            android:background="@mipmap/car_lights"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"/>
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:text="Interior Lights"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <FrameLayout
+                    android:background="@drawable/control_fragment_card"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_gravity="center"
+                            android:text="Car Atmosphere\n      LED Light"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                        <SeekBar
+                            android:id="@+id/seek_bar_led_light"
+                            android:layout_marginTop="25dp"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:max="100"
+                            android:progress="50"
+                            android:layout_gravity="center_vertical"
+                            android:maxHeight="10dip"
+                            android:minHeight="10dip"
+                            android:progressDrawable="@xml/seekbar_led_light"
+                            android:splitTrack="false"
+                            android:thumb="@mipmap/ic_seekbar" />
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </com.example.carappuk.ViewModel.DragListenerGridView>
+
+
+
+<!--        <com.example.carappuk.ViewModel.DragListenerGridView-->
+<!--            android:id="@+id/dragListenerGridView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:columnCount="5"-->
+<!--            android:rowCount="3">-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Drive Model \n Comfort"-->
+<!--                    android:textSize="20sp">-->
+<!--                </TextView>-->
+
+<!--                <Switch-->
+<!--                    android:id="@+id/drive_mode_comfort"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:switchMinWidth="40dp"-->
+<!--                    android:switchPadding="10dp"-->
+<!--                    android:typeface="normal"-->
+<!--                    tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Drive Model \n Saring"-->
+<!--                    android:textSize="20sp" />-->
+<!--                <Switch-->
+<!--                    android:id="@+id/drive_mode_saring"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:switchMinWidth="40dp"-->
+<!--                    android:switchPadding="10dp"-->
+<!--                    android:typeface="normal"-->
+<!--                    tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+<!--            </LinearLayout>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Drive Model \n Sport"-->
+<!--                    android:textSize="20sp" />-->
+<!--                <Switch-->
+<!--                    android:id="@+id/drive_mode_sport"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:switchMinWidth="40dp"-->
+<!--                    android:switchPadding="10dp"-->
+<!--                    android:typeface="normal"-->
+<!--                    tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+<!--            </LinearLayout>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Tpms"-->
+<!--                    android:textSize="20sp" />-->
+<!--                <Switch-->
+<!--                    android:id="@+id/tpms"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:switchMinWidth="40dp"-->
+<!--                    android:switchPadding="10dp"-->
+<!--                    android:typeface="normal"-->
+<!--                    tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Sun-Root"-->
+<!--                    android:textSize="20sp" />-->
+<!--                <Switch-->
+<!--                    android:id="@+id/sun_root"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:switchMinWidth="40dp"-->
+<!--                    android:switchPadding="10dp"-->
+<!--                    android:typeface="normal"-->
+<!--                    tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Brightness"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <SeekBar-->
+<!--                    android:id="@+id/seek_bar_brightness"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:max="255"-->
+<!--                    android:maxHeight="10dip"-->
+<!--                    android:minHeight="10dip"-->
+<!--                    android:progressDrawable="@xml/seekbar_temperature"-->
+<!--                    android:splitTrack="false"-->
+<!--                    android:thumb="@mipmap/ic_seekbar" />-->
+<!--            </LinearLayout>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_margin="15dp"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:textSize="20sp" />-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Child Safety Lock"-->
+<!--                    android:textSize="20sp" />-->
+<!--                <Switch-->
+<!--                    android:id="@+id/child_safety_lock"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:switchMinWidth="40dp"-->
+<!--                    android:switchPadding="10dp"-->
+<!--                    android:typeface="normal"-->
+<!--                    tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Ventilation"-->
+<!--                    android:textSize="20sp" />-->
+<!--                <Switch-->
+<!--                    android:id="@+id/ventilation"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:switchMinWidth="40dp"-->
+<!--                    android:switchPadding="10dp"-->
+<!--                    android:typeface="normal"-->
+<!--                    tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Volume "-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <SeekBar-->
+<!--                    android:id="@+id/seek_bar_volume"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:maxHeight="10dip"-->
+<!--                    android:minHeight="10dip"-->
+<!--                    android:progressDrawable="@xml/seekbar_temperature"-->
+<!--                    android:splitTrack="false"-->
+<!--                    android:thumb="@mipmap/ic_seekbar" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Hood"-->
+<!--                    android:textSize="20sp" />-->
+<!--                <Switch-->
+<!--                    android:id="@+id/hood"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:switchMinWidth="40dp"-->
+<!--                    android:switchPadding="10dp"-->
+<!--                    android:typeface="normal"-->
+<!--                    tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Trunk"-->
+<!--                    android:textSize="20sp" />-->
+<!--                <Switch-->
+<!--                    android:id="@+id/trunk"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:switchMinWidth="40dp"-->
+<!--                    android:switchPadding="10dp"-->
+<!--                    android:typeface="normal"-->
+<!--                    tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Fuel Cap"-->
+<!--                    android:textSize="20sp" />-->
+<!--                <Switch-->
+<!--                    android:id="@+id/fuel_cap"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:switchMinWidth="40dp"-->
+<!--                    android:switchPadding="10dp"-->
+<!--                    android:typeface="normal"-->
+<!--                    tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tx_lock_unlock"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Unlock"-->
+<!--                    android:textSize="20sp" />-->
+<!--                <Switch-->
+<!--                    android:id="@+id/lock_unlock"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:switchMinWidth="40dp"-->
+<!--                    android:switchPadding="10dp"-->
+<!--                    android:typeface="normal"-->
+<!--                    tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/control_fragment_card"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:text="Car Atmosphere LED light"-->
+<!--                    android:textSize="15sp" />-->
+
+<!--                <SeekBar-->
+<!--                    android:id="@+id/seek_bar_led_light"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:max="30"-->
+<!--                    android:maxHeight="10dip"-->
+<!--                    android:min="16"-->
+<!--                    android:minHeight="10dip"-->
+<!--                    android:progress="22"-->
+<!--                    android:progressDrawable="@xml/seekbar_temperature"-->
+<!--                    android:splitTrack="false"-->
+<!--                    android:thumb="@mipmap/ic_seekbar" />-->
+<!--            </LinearLayout>-->
+<!--        </com.example.carappuk.ViewModel.DragListenerGridView>-->
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_navigation_fragment"
+    tools:context=".fragment.NavigationFragment">
+
+
+    <TextView
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Where are you going today?"
+        android:textSize="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dp"
+        android:layout_height="80dp">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/icon_search_address"/>
+        <EditText
+            android:id="@+id/ed_address"
+            android:hint="Your Current Location"
+            android:layout_width="500dp"
+            android:background="@drawable/address_search"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/bt_start_navigation"
+        android:layout_width="173dp"
+        android:layout_height="66dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="300dp"
+        android:background="@mipmap/icon_start_navigation"/>
+
+</FrameLayout>
